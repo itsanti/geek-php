@@ -1,0 +1,10 @@
+{% extends 'layout.phtml' %}
+
+{% set img = raws|first %}
+
+{% block content %}
+<figure>
+  <img src="{{ img.url }}">
+  <figcaption>ширина: {{ img.width }}px, высота: {{ img.height }}px</figcaption>
+ </figure>
+{% endblock %}

@@ -1,0 +1,63 @@
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+
+CREATE TABLE IF NOT EXISTS `city` (
+  `ID` int(11) NOT NULL,
+  `CountryCode` int(5) NOT NULL,
+  `Name` varchar(255) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+INSERT INTO `city` (`ID`, `CountryCode`, `Name`) VALUES
+(1, 7, 'MOSCOW'),
+(2, 61, 'CANBERRA');
+
+CREATE TABLE IF NOT EXISTS `country` (
+  `ID` int(11) NOT NULL,
+  `Code` int(5) NOT NULL,
+  `Capital` int(11) NOT NULL,
+  `Name` varchar(128) NOT NULL,
+  `Region` varchar(32) NOT NULL,
+  `Population` int(10) unsigned NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+INSERT INTO `country` (`ID`, `Code`, `Capital`, `Name`, `Region`, `Population`) VALUES
+(1, 7, 1, 'Russia', 'Europe', 140702000),
+(2, 61, 2, 'Australia', 'Australia', 21515754);
+
+CREATE TABLE IF NOT EXISTS `countrylanguage` (
+  `ID` int(11) NOT NULL,
+  `Language` varchar(4) NOT NULL,
+  `CountryCode` int(5) NOT NULL,
+  `IsOfficial` varchar(1) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+INSERT INTO `countrylanguage` (`ID`, `Language`, `CountryCode`, `IsOfficial`) VALUES
+(1, 'ru', 7, 'T'),
+(2, 'EN', 61, 'T');
+
+
+ALTER TABLE `city`
+  ADD PRIMARY KEY (`ID`);
+
+ALTER TABLE `country`
+  ADD PRIMARY KEY (`ID`);
+
+ALTER TABLE `countrylanguage`
+  ADD PRIMARY KEY (`ID`);
+
+
+ALTER TABLE `city`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+ALTER TABLE `country`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+ALTER TABLE `countrylanguage`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

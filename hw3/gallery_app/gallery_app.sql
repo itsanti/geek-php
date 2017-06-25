@@ -1,0 +1,32 @@
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+
+CREATE TABLE IF NOT EXISTS `images` (
+  `id` int(10) unsigned NOT NULL,
+  `url` varchar(1024) NOT NULL,
+  `gorder` int(3) NOT NULL,
+  `width` int(5) NOT NULL,
+  `height` int(5) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+INSERT INTO `images` (`id`, `url`, `gorder`, `width`, `height`) VALUES
+(1, 'https://cdn.pixabay.com/photo/2016/09/14/08/26/web-1668927_960_720.jpg', 1, 960, 678),
+(2, 'https://cdn.pixabay.com/photo/2017/06/20/08/12/maintenance-2422173_960_720.png', 2, 960, 640),
+(3, 'https://cdn.pixabay.com/photo/2016/02/19/11/19/computer-1209641_960_720.jpg', 3, 960, 640);
+
+
+ALTER TABLE `images`
+  ADD PRIMARY KEY (`id`);
+
+
+ALTER TABLE `images`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
